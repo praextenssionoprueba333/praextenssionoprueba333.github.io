@@ -1,78 +1,66 @@
 <!DOCTYPE html>
-<html lang="es">
-<style>
-    body {margin:0;padding:0;}
-    .jw-state-idle .jw-display-controls .jw-display-icon-container {
-    background: 0 0;
-    margin-bottom: 0;
-    border-radius: 50%;
-    animation-name: scaling;
-    -webkit-animation-name: scaling;
-    animation-duration: 0.6s;
-    -webkit-animation-duration: 0.6s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    animation-direction: alternate;
-    -webkit-animation-direction: alternate;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: solid 0.125rem #f7f7f7;
-    height: 75px;
-    width: 75px;
-}
+<html lang="es-ES">
 
-.jw-state-idle .jw-display-controls .jw-display-icon-container .jw-icon {
-    color: #f7f7f7 !important;
-    height: 50px;
-    width: 50px;
-    padding: 12px;
-}
-@keyframes scaling {
-    from {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-    }
-}
-
-@-webkit-keyframes scaling {
-    from {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-    }
-}
-</style>
-<style type="text/css">
-body {
-}
-.jw-button-color {
-    color:  #FFFFFF!important;
-}
-.jw-knob {
-    background-color: #FFFF00 !important;
-    }
-.jw-progress {
-    background-color: blue!important;
-}
-.jw-text-live::before {
-    background-color: red!important;
-    }
-.jw-reset-text{
-    color: white !important;
-}
-</style>
-
-
+	<head>
+		<meta charset="utf-8">
+		<base href="https://g-player.varioscanais.com/">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+					<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+										<meta name="referrer" content="no-referrer">
+				<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+		<meta name="description" content="Live ao Vivo">
+		<meta name="og:sitename" content="Varios Canais">
+		<meta name="og:title" content='Somos Novelas'>
+		<meta name="og:description" content="Live ao Vivo">
+		<meta name="og:type" content="video.movie">
+		<meta name="og:image" content="">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content='Somos Novelas'>
+		<meta name="twitter:description" content="Live ao Vivo">
+		<meta name="twitter:image" content="">
+		<meta name="msapplication-TileColor" content="#b70007">
+		<meta name="theme-color" content="#b70007">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<title>Live ao Vivo</title>
+		<link rel="manifest" href="manifest.webmanifest">
+		<link rel="mask-icon" href="assets/img/maskable_icon.png" color="#ffffff">
+		<link rel="shortcut icon" href="favicon.ico" type="image/ico">
+		<link rel="preconnect" href="//g-player.varioscanais.com/">
+		<link rel="preconnect" href="//cdn.jsdelivr.net">
+		<link rel="preconnect" href="//www.gstatic.com">
+		<link rel="preconnect" href="//www.googleapis.com">
+		<link rel="preconnect" href="//www.googletagmanager.com">
+		<link rel="preconnect" href="//www.google.com">
+		<link rel="preconnect" href="//www.google-analytics.com">
+		<link rel="preconnect" href="//fonts.gstatic.com">
+		<link rel="preconnect" href="//googleusercontent.com">
+		<link rel="preconnect" href="//lh3.googleusercontent.com">
+		<link rel="preconnect" href="//drive-thirdparty.googleusercontent.com">
+		<link rel="dns-prefetch" href="//g-player.varioscanais.com/">
+		<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+		<link rel="dns-prefetch" href="//www.gstatic.com">
+		<link rel="dns-prefetch" href="//www.googleapis.com">
+		<link rel="dns-prefetch" href="//www.googletagmanager.com">
+		<link rel="dns-prefetch" href="//www.google.com">
+		<link rel="dns-prefetch" href="//www.google-analytics.com">
+		<link rel="dns-prefetch" href="//fonts.gstatic.com">
+		<link rel="dns-prefetch" href="//googleusercontent.com">
+		<link rel="dns-prefetch" href="//lh3.googleusercontent.com">
+		<link rel="dns-prefetch" href="//drive-thirdparty.googleusercontent.com">
+		<link rel="stylesheet" type="text/css" href="https://g-player.varioscanais.com/assets/css/player-v3.1.min.css">
+		<style>
+			.lds-ellipsis div,
+			#btnServer,
+			#servers li a:hover,#servers li a:focus,#servers li a.active {
+				background-color: #00c234 !important
+			}
+			#btnServer {
+				border-color: #00c234 !important
+			}
+		</style>
+	<script defer src='https://www.googletagmanager.com/gtag/js?id=UA-243075512-1'></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -99,12 +87,11 @@ body {
 		<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js"></script>
 		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="https://g-player.varioscanais.com/assets/js/app-v3.js"></script>
-<script type="text/javascript" src="https://g-player.varioscanais.com/assets/vendor/jwplayer/jwplayer.8.9.5.js"></script>
-<script type="text/javascript" src="https://g-player.varioscanais.com/assets/js/player-v3.4.min.js"></script>
-	
-		<script src="//ssl.p.jwpcdn.com/player/v/8.34.5/jwplayer.js"></script>
-		<script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
-	
+		<script type="text/javascript" src="https://g-player.varioscanais.com/assets/vendor/jwplayer/jwplayer.8.9.5.js"></script>
+		<script type="text/javascript" src="https://g-player.varioscanais.com/assets/js/player-v3.4.min.js"></script>
+
+
+		
         <script type="text/javascript">
             aclib.runPop({
                 zoneId: '6502670',
