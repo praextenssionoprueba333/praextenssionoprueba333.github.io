@@ -1,260 +1,116 @@
-<!DOCTYPE html>
+
 <html lang="es">
-<style>
-    body {margin:0;padding:0;}
-    .jw-state-idle .jw-display-controls .jw-display-icon-container {
-    background: 0 0;
-    margin-bottom: 0;
-    border-radius: 50%;
-    animation-name: scaling;
-    -webkit-animation-name: scaling;
-    animation-duration: 0.6s;
-    -webkit-animation-duration: 0.6s;
-    animation-timing-function: linear;
-    -webkit-animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    -webkit-animation-iteration-count: infinite;
-    animation-direction: alternate;
-    -webkit-animation-direction: alternate;
-    background-color: rgba(0, 0, 0, 0.4);
-    border: solid 0.125rem #f7f7f7;
-    height: 75px;
-    width: 75px;
-}
+<head>
+  <script type="text/javascript" charset="utf-8" async="" src="//ssl.p.jwpcdn.com/player/v/8.26.0/jwpsrv.js"></script>
+ <script type='text/javascript'>
+    document.oncontextmenu = function(){return false}
+</script>
 
-.jw-state-idle .jw-display-controls .jw-display-icon-container .jw-icon {
-    color: #f7f7f7 !important;
-    height: 50px;
-    width: 50px;
-    padding: 12px;
-}
-@keyframes scaling {
-    from {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
 
-    to {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-    }
-}
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+<meta content="noindex,nofollow" name="robots">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  h4{color:#F08080;font-size:26px;top:1px}h5{color:#F1C40F;font-size:20px}h6{color:#fff;font-size:20px;font-family:sans-serif}
+#publicidad-video{ position: absolute; z-index: 0; width: 300px; height: 300px; margin: 10px 0px 0px 10px;}
+.jbtn {background: #F00;color: #fff;border: 0px solid #fff;border-radius: 3px;padding: 2px;cursor: pointer;}
+.jbtn:hover {background: #F00;}
+body {background-color: #000000;margin: 0px;padding: 0px;overflow: hidden;}
+#ventana-flotante {width: 300px;  /* Anchoventana */height:300px;  /* Altoventana */background: transparent;  /* Colorfondo */position: fixed;top: 40px;left: 50%;margin-left: -160px;border: 0px;  /* Bordeventana */box-shadow: 0 0px 0px rgba(0,0,0,0);  /* Sombra */z-index:999;}
+#ventana-flotante #contenedor {padding: 0px 0px 0px 0px;}
+#ventana-flotante .cerrar {float: left;border-bottom: 0px solid #bbb;border-left: 0px solid #bbb;color: #999;background: white;line-height: 17px;text-decoration: none;padding: 0px 14px;font-family: Arial;border-radius: 0 0 0 5px;box-shadow: -1px 1px white;font-size: 18px;-webkit-transition: .3s;-moz-transition: .3s;-o-transition: .3s;-ms-transition: .3s;}
+#ventana-flotante .cerrar:hover {background: transparent;color: white;text-decoration: none;text-shadow: -1px -1px red;border-bottom: 0px solid red;border-left: 0px solid red;}
+#ventana-flotante #contenedor .contenido {padding: 0px;box-shadow: inset 0px 0px transparent;background: transparent;  /* Fondo del mensaje */border: 0px ;  /* Borde del mensaje */font-size: 0px;  /* Tama?o del texto del mensaje */color: #555;  /* Color del texto del mensaje */text-shadow: 0px 0px transparent;margin: 0 auto;border-radius: 0px;}
+.oculto {-webkit-transition:3s;-moz-transition:5s;-o-transition:5s;-ms-transition:5s;opacity:0;-ms-opacity:0;-moz-opacity:0;visibility:hidden;}
+#contador {visibility: hidden; position: absolute;  left: 0; top: 0; height:0; width:0; border: none;}
+.contador {visibility: hidden; position: absolute;  left: 0; top: 0; height:0; width:0; border: none;}
 
-@-webkit-keyframes scaling {
-    from {
-        transform: scale(1);
-        -webkit-transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.1);
-        -webkit-transform: scale(1.1);
-    }
-}
-</style>
-<style type="text/css">
-body {
-}
-.jw-button-color {
-    color:  #FFFFFF!important;
-}
-.jw-knob {
-    background-color: #FFFF00 !important;
-    }
-.jw-progress {
-    background-color: blue!important;
-}
-.jw-text-live::before {
-    background-color: red!important;
-    }
-.jw-reset-text{
-    color: white !important;
-}
+.jw-settings-menu {color: #ffffff!important;}
+.jw-controlbar {background-color: #162748!important;   }
+.jw-button-color {color: rgb(47 134 255 / 100%)!important;}
+.jw-button-color:hover {color: rgb(207 224 247 / 100%)!important;}
+.jw-knob {background-color: #2f86ff!important;   }
+.jw-progress {background-color: #2f86ff!important;}
+.jw-text-live::before {background-color: #2f86ff!important;    }
+.jw-reset-text{color: #2f86ff!important;}
 </style>
 
+<script src="//ssl.p.jwpcdn.com/player/v/8.34.0/jwplayer.js"></script>
+<script> jwplayer.key='XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo';</script>
 
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-243075512-1');
-</script>
-		<script>
-    (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-WCXCXQC');
-</script>
-		<script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js"></script>
-		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-		<script type="text/javascript" src="https://g-player.varioscanais.com/assets/js/app-v3.js"></script>
-<script type="text/javascript" src="https://g-player.varioscanais.com/assets/vendor/jwplayer/jwplayer.8.9.5.js"></script>
-<script type="text/javascript" src="https://g-player.varioscanais.com/assets/js/player-v3.4.min.js"></script>
-	
-		<script src="//ssl.p.jwpcdn.com/player/v/8.34.5/jwplayer.js"></script>
-		<script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"</script>
-	
-        <script type="text/javascript">
-            aclib.runPop({
-                zoneId: '6502670',
-            });
-        </script>
-    <style>
-        body { margin: 0px; }
-        .ViostreamIframe { overflow: hidden; padding-top: 56.25%; position: relative; }
-        .ViostreamIframe iframe { border: 0; height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
-    </style>
 </head>
-<body>
-    <div id="player" class="ViostreamIframe"></div>
 
-    <script>
-        function getParameterByName(name) {
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(window.location.href);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
+
+<script type="text/javascript">
+function getParameterByName(name) {
+	name = name.replace(/[\[]/, "\[").replace(/[\]]/, "\]");
+	var regex = new RegExp("[\?&]" + name + "=([^&#]*)"),
+	results = regex.exec(location.search);
+	return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var getURL = getParameterByName('get');
+var getLang = getParameterByName('lang');
+var getIMG = getParameterByName('img');
+var getKEY  = getParameterByName('ik');
+var getKEY2  = getParameterByName('k');
+if (getURL == "#") {alert('');}
+</script>
+<!--ads sobre video-->
+<body bgcolor='black' style='margin:0' oncontextmenu='return false' onkeydown='return false'>
+
+	<div id="player"></div>
+
+<script type="text/javascript">
+var playerInstance=jwplayer("player");
+
+playerInstance.setup({
+
+    playlist: [{
+    "title": "🔴 EN VIVO",
+    "description": "",
+    "image": getIMG,
+      "sources": [
+        {
+          "default": false,
+          "type": "dash",
+          "file": 'https://edge-mix01-bua.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc_wl/ESPN2HD.mpd"',
+          "drm": {
+            "clearkey": {"keyId": "e884b711ab111beb8a7ba1e7bcbdc9bf", "key": "cb89ee3961599e3e648a5aad60895f34"}
+          },
+          "label": "0"
         }
+      ]
+    }],
+    width: "100%",
+    height: "100%",
+    aspectratio: "16:9",
+    autostart: true,
+    mute: true,
+    cast: {},
+    sharing: {}
+});
+if (getLang == "") {
+			lang = 1;
+		}
+		jwplayer().on('play', function(e) {
+		  jwplayer().setCurrentAudioTrack(lang);
+		});
+</script>
 
-        var ConfiguracionCanales = {
-    //DEPORTSS
-            "espn1": {
-                url: "//edge-mix01-bua.cvattv.com.ar/live/c3eds/ESPN2HD/SA_Live_dash_enc_wl/ESPN2HD.mpd",
-                k1: "e884b711ab111beb8a7ba1e7bcbdc9bf",
-                k2: "cb89ee3961599e3e648a5aad60895f34"
-            },
-            "espn2": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c6eds/ESPN2_Arg/SA_Live_dash_enc_wl/ESPN2_Arg.mpd",
-                k1: "65a5bfa3c7a72dde60be9b0c7406c8fc",
-                k2: "0b40ae9f78a7bac3b57ecbf72d3c081e"
-            },
-            "espn3": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/ESPN3/SA_Live_dash_enc_wl/ESPN3.mpd",
-                k1: "f4c9f97e2a36feab0e5077f2b44cbc4e",
-                k2: "1743cd03dfe3736b2c95da91a783af38"
-            },
-            "espnextra": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/ESPNHD/SA_Live_dash_enc_wl/ESPNHD.mpd",
-                k1: "cc8d44406ed6bf1898ad9f7a2d64f29e",
-                k2: "fb85d059687ab0fc67805806204edbdf"
-            },
-            "espnprem": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc_wl/Fox_Sports_Premiun_HD.mpd",
-                k1: "4c230dbc7f6a4bfa6ad0aa73ff792374",
-                k2: "4186a7c2a15f590a9399886feaec4257"
-            },
-            "tntsportsaargeen": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c6eds/TNT_Sports_HD/SA_Live_dash_enc_wl/TNT_Sports_HD.mpd",
-                k1: "bc80fa3da696e503f940fde5f681a1c5",
-                k2: "ea46e4e9f1132e8dd71fb77f7d55058a"
-            },
-            "foxsports1": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/FoxSports/SA_Live_dash_enc_wl/FoxSports.mpd",
-                k1: "cbc2a0c7a38df0aa3333cd71841d3b0d",
-                k2: "aac61b730e2ac1df23f1e872e7541c1b"
-            },
-            "foxsports2": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/FoxSports2HD/SA_Live_dash_enc_wl/FoxSports2HD.mpd",
-                k1: "c98ddffc470fe449ae1a8d6492116976",
-                k2: "5086d370e840010232cf4532b16e197f"
-            },
-            "foxsports3": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/FoxSports3HD/SA_Live_dash_enc_wl/FoxSports3HD.mpd",
-                k1: "55b47390cf9e4997dae6dac85e057875",
-                k2:"fa39e855543c5d70f30600d59e5e4c1b"
-            },
-            "tyc": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/TyCSport/SA_Live_dash_enc_wl/TyCSport.mpd",
-                k1: "2b21c8fa9a329cce311a4c4a4aa996a1",
-                k2: "cc23ea1fb32629f9e1f48c8deeae3e5b"
-            },
-            "tycinternacional": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c3eds/TyC_Internacional/SA_Live_dash_enc_wl/TyC_Internacional.mpd",
-                k1: "58e1ebe75d944f6a98ea67b1c7c0a572",
-                k2: "1c311b069dbce31ce8e62a6e7e2433eb"
-            },
-          "espe5": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/ESPN4/SA_Live_dash_enc_wl/ESPN4.mpd",
-                k1: "24f2b3e741f0d9e9a8d516faff38bddc",
-                k2: "bbd3fd02fb104e1463ac528a13f67e4a"
-            },
-          "espe6": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/FoxSports3_UY/SA_Live_dash_enc_wl/FoxSports3_UY.mpd",
-                k1: "5fc7b662e69c0fbf8d39691166b1c919",
-                k2: "89157cdd25df25d56f1ecccee3850888"
-            },
-          "espe7": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/FoxSports2_UY/SA_Live_dash_enc_wl/FoxSports2_UY.mpd",
-                k1: "5fc7b662e69c0fbf8d39691166b1c919",
-                k2: "89157cdd25df25d56f1ecccee3850888"
-            },
-        "evenuy": {
-                url: "//edge-live31-hr.cvattv.com.ar/live/c7eds/Eventos_HD_Uy/SA_Live_dash_enc_wl/Eventos_HD_Uy.mpd",
-                k1: "48d0e34c8797c5c2a742d2630a8fb975",
-                k2: "fb5d12b9d8febe836e5670abd003ddca"
-            },	
-            "TYC_SPORTS_PLAY": {
-                url: "https://dpyzprfzko681.cloudfront.net/out/v1/366fc52554ae42c58465ea4b278eac0c/index.m3u8",
-            },
 
-        };
-
-var id = getParameterByName('id');
-var config = ConfiguracionCanales[id];
-
-if (config) {
-    var sources = [];
-
-    if (config.url.includes('.m3u8')) {
-        sources.push({
-            file: config.url
-        });
-    }
-    
-    if (config.url.includes('.mpd') && config.k1 && config.k2) {
-        sources.push({
-            file: config.url,
-            drm: {"clearkey": {"keyId": config.k1, "key": config.k2}}
-        });
-    }
-
- //JWWWWWW
-    jwplayer("player").setup({
-        playlist: [{
-           title : "REPRODUCTOR",
-description: "EN VIVO",
-            sources: sources
-        }],
-        autostart: false,
-      
-        width: "100%", 
-        height: "100%", 
-         mute: "false",
-        aspectratio: "16:9",
-       skin: {
-            name: "white",
-       active: "white", 
-       inactive: "white",
-       background: "#002147"
-    }
-       }
-       );
-       
-		jwplayer("player").on("play", function(e){jwplayer("player").setCurrentAudioTrack(1)});
-  }
-    </script>
 </body>
-</html>
+<script>
+document.onkeypress = function (event) {
+event = (event || window.event);
+if (event.keyCode == 123) {return false;}}
+document.onmousedown = function (event) {event = (event || window.event);
+if (event.keyCode == 123) {return false;}}
+document.onkeydown = function (event) {event = (event || window.event);
+if (event.keyCode == 123) {return false; }}
+</script><script>
+document.oncontextmenu = function(){return false;}</script>
