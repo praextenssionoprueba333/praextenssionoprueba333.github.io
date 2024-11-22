@@ -2,6 +2,12 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+         <script src="https://compo-enteesdewebb.glitch.me/adcash_lib.js"></script>
+    <script type="text/javascript">
+        aclib.runPop({
+            zoneId: '7425742',
+        });
+    </script>
     <title>Verificación de Extensión e Inclusión de Reproductor</title>
     <link rel="stylesheet" href="https://boxicons.com/css/boxicons.min.css">
  <style>
@@ -84,14 +90,14 @@
 <body>
     <div class="container">
         <div id="player" class="hidden"></div>
-        <div id="alerta-extension" class="hidden alert-card">
-            <i class='bx bx-error-circle boxicon'></i>
+        <div id="alerta-extension" class="hidden alert">
+        <i class="bx bx-error-circle boxicon"></i>
              <h2>Instalar Extensión VideoPlayer</h2>
             <p>Para ver los canales, necesitas añadir la extensión VideoPlayer.</p>
             <p>Una vez instalada la extensión en tu Navegador, recargar esta página.</p>
             <p>Recuerda:estos canales estan disponibles en Argentina, Paraguay, Uruguay o con VPN de estos Paises.</p>
             <p>Una vez instalada la extensión, recarga la página.</p>
-            <a href="https://chrome.google.com/webstore/detail/opmeopcambhfimffbomjgemehjkbbmji" target="_blank">Instalar ahora</a>
+            <a href="https://chromewebstore.google.com/detail/reproductor-mpdm3u8m3uepg/opmeopcambhfimffbomjgemehjkbbmji" target="_blank">Instalar ahora</a>
         </div>
     </div>
     <script type="text/javascript">
@@ -145,7 +151,7 @@ number = 3;
             showUnsupportedDeviceMessage();
         } else {
             // Array de URLs disponibles
-            var mt = ["edge-live01-mun", "edge-live02-mun","edge-mix01-cte","edge-mix02-cte", "edge-live11-hr", "edge-live12-hr", "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr", "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live34-hr", "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl", "edge-live17-sl", "edge-live31-sl", "edge-vod02-sl", "edge-vod04-sl", "edge-vod06-sl", "edge9-sl", "edge10-sl", "edge-vod01-hr", "edge-vod03-hr", "edge-vod04-hr", "edge1-ccast-sl", "edge2-ccast-sl", "edge6-ccast-sl", "edge-live01-cen", "edge-live03-cen", "edge-mix02-cte", "edge-vod01-cen", "edge-live01-cte", "edge-live01-coe","edge-live01-coe","edge5-hr","edge-mix02-coe", "edge-mix03-coe", "edge-mix04-coe", "edge-mix05-coe","edge-live01-bel", "edge-live02-bel","edge-live03-bel","edge-mix01-ird", "edge-mix02-ird", "edge-mix01-mus", "edge-mix03-mus"];
+            var mt = ["edge-live01-cen","edge-live02-cen","edge-live03-cen","edge-vod01-cen", "edge-live01-mun", "edge-live02-mun","edge-mix01-bua","edge-live01-coe", "edge-mix01-mun", "edge-mix02-mun", "edge-mix01-mus", "edge-mix03-mus", "edge-mix01-coe","edge-mix02-coe", "edge-mix03-coe", "edge-mix04-coe", "edge-mix05-coe","edge-live01-bel", "edge-live02-bel","edge-live03-bel","edge-mix01-cte","edge-mix02-cte", "edge-live11-hr", "edge-live12-hr", "edge-live13-hr", "edge-live14-hr", "edge-live15-hr", "edge-live16-hr", "edge-live17-hr", "edge-live31-hr", "edge-live32-hr", "edge-live34-hr", "edge-live11-sl", "edge-live12-sl", "edge-live13-sl", "edge-live15-sl", "edge-live17-sl", "edge-live31-sl","edge-live32-sl","edge-vod01-sl","edge-vod02-sl", "edge-vod04-sl", "edge-vod06-sl", "edge9-sl", "edge10-sl", "edge-vod01-hr","edge-vod02-hr","edge-vod03-hr", "edge-vod04-hr", "edge1-ccast-sl", "edge2-ccast-sl", "edge6-ccast-sl","edge5-hr","edge-mix01-ird", "edge-mix02-ird","edge-live01-ros","edge-live02-ros","edge-mix01-bua","cdn","chromecast"];
 
             // Obtener un índice aleatorio de la lista de URLs
             var randomIndex = Math.floor(Math.random() * mt.length);
@@ -1013,18 +1019,15 @@ else if (getURL == "RXZlbnRvc18yX0hE") // Eventos 2
         key = "4e486d25d7d0e7d131743b285963c643";
 }	
 
-            // Convertir keyId y key a una cadena JSON
-            if (keyId && key) {
-                var keyObj = {};
-                keyObj[keyId] = key;
-                var keyJson = JSON.stringify(keyObj);
+             // Convertir keyId y key a una cadena JSON
+               if (keyId && key) {
+                var keyString = `"${keyId}":"${key}"`;
                 // Codificar en base64
-                var base64Key = btoa(keyJson);
+                var base64Key = btoa(keyString);
 
                 // Construir la URL con el key ofuscado en base64
-                var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?&ck=${encodeURIComponent(base64Key)}`;
-
-                // Mostrar el reproductor o el mensaje de extensión según corresponda
+               var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`;
+ // Mostrar el reproductor o el mensaje de extensión según corresponda
                 const playerDiv = document.getElementById("player");
                 const alertaDiv = document.getElementById("alerta-extension");
 
@@ -1049,7 +1052,5 @@ else if (getURL == "RXZlbnRvc18yX0hE") // Eventos 2
             img.onerror = notInstalledCallback;
             img.src = 'chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/play-on.png';
         }
-      
-    </script>
-</body>
+    </script></body>
 </html>
