@@ -1059,38 +1059,47 @@ else if (getURL == "RXZlbnRvc18yX0hE") // Eventos 2
         key = "4e486d25d7d0e7d131743b285963c643";
 }	
 
-        // Convertir keyId y key a una cadena JSON
-               if (keyId && key) {
-                var keyString = `"${keyId}":"${key}"`;
-                // Codificar en base64
-                var base64Key = btoa(keyString);
+         // Convertir keyId y key a una cadena JSON
+                        if (keyId && key) {
+                                var keyString = `"${keyId}":"${key}"`;
+                                // Codificar en base64
+                                var base64Key = btoa(keyString);
 
-                // Construir la URL con el key ofuscado en base64
-               var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`;
- // Mostrar el reproductor o el mensaje de extensión según corresponda
-                const playerDiv = document.getElementById("player");
-                const alertaDiv = document.getElementById("alerta-extension");
 
-                isExtensionInstalled(
-                    () => {
-                        playerDiv.classList.remove("hidden");
-                        playerDiv.innerHTML = `<iframe id="iframe" allow="encrypted-media" allowfullscreen src="${extensionUrl}"></iframe>`;
-                    },
-                    () => {
-                        alertaDiv.classList.remove("hidden");
-                    }
-                );
-            } else {
-                alert('KeyId o Key no definidos.');
-            }
-        }
+                                // console.log("KeyID: " + keyId + "\nkey: "+ key + "\n\nkeyString: "+keyString + "\n\nbase64: "+btoa(getURL) + "\n\nrevertida64: "+atob(getURL));
 
-        // Función para verificar si la extensión está instalada
-        function isExtensionInstalled(installedCallback, notInstalledCallback) {
-            const img = document.createElement('img');
-            img.onload = installedCallback;
-            img.onerror = notInstalledCallback;
-            img.src = 'chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/play-on.png';
-        }
-    </script></body>
+
+                                // Construir la URL con el key ofuscado en base64
+                                // console.log(`extensionUrl: ${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`);
+                                // var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`;
+                                var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYmNsaWVudC5hbnRpbmFwbGF5cGx1cy5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly93ZWJjbGllbnQuYW50aW5hcGxheXBsdXMuY29tLmFyLyJ9`;
+
+                                console.log("Extension:" + extensionUrl);
+                                // Mostrar el reproductor o el mensaje de extensión según corresponda
+                                const playerDiv = document.getElementById("player");
+                                const alertaDiv = document.getElementById("alerta-extension");
+
+                                isExtensionInstalled(
+                                        () => {
+                                                playerDiv.classList.remove("hidden");
+                                                playerDiv.innerHTML = `<iframe id="iframe" allow="encrypted-media" allowfullscreen src="${extensionUrl}"></iframe>`;
+                                        },
+                                        () => {
+                                                alertaDiv.classList.remove("hidden");
+                                        }
+                                );
+                        } else {
+                                alert('KeyId o Key no definidos.');
+                        }
+                }
+
+                // Función para verificar si la extensión está instalada
+                function isExtensionInstalled(installedCallback, notInstalledCallback) {
+                        const img = document.createElement('img');
+                        img.onload = installedCallback;
+                        img.onerror = notInstalledCallback;
+                        img.src = 'chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/play-on.png';
+                }
+        </script>
+</body>
 </html>
