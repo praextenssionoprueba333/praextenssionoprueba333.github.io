@@ -198,8 +198,8 @@ number = 3;
             console.log("Selected mt:", mt[randomIndex]);
 
             // Construir la URL del mpd
-// var mpdBase = `https://${mt[randomIndex]}.cvattv.com.ar/live/c3eds/Eventos_PY/SA_Live_dash_enc_wl/Eventos_PY.mpd`;
- var mpdBase = `https://edge-live14-sl.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzUwOTU3NDE2Iiwic2lwIjoiMTc5LjI3LjIwMC40NSIsInBhdGgiOiIvbGl2ZS9jNmVkcy9UZWxlZmVIRC9TQV9MaXZlX2Rhc2hfZW5jLyIsInNlc3Npb25fY2RuX2lkIjoiNDAxNDE1OWU3MmIzMGJmMCIsInNlc3Npb25faWQiOiIiLCJjbGllbnRfaWQiOiIiLCJkZXZpY2VfaWQiOiIiLCJtYXhfc2Vzc2lvbnMiOjAsInNlc3Npb25fZHVyYXRpb24iOjAsInVybCI6Imh0dHBzOi8vMjAxLjIzNS42Ni4xMjIiLCJhdWQiOiIxOTYiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.YJ-0zc7NXZmlQefxKTaBpelHoGJWgS0z_m-caaNBT0g-p4HQNkHMkK1hDKyplBo4fvA6p2nWAh5HjhfUnHvXBA==/live/c3eds/Eventos_PY/SA_Live_dash_enc_wl/Eventos_PY.mpd`;
+ var mpdBase = `https://${mt[randomIndex]}.cvattv.com.ar/live/c3eds/Eventos_PY/SA_Live_dash_enc_wl/Eventos_PY.mpd`;
+// var mpdBase = `https://edge-live14-sl.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzUwOTU3NDE2Iiwic2lwIjoiMTc5LjI3LjIwMC40NSIsInBhdGgiOiIvbGl2ZS9jNmVkcy9UZWxlZmVIRC9TQV9MaXZlX2Rhc2hfZW5jLyIsInNlc3Npb25fY2RuX2lkIjoiNDAxNDE1OWU3MmIzMGJmMCIsInNlc3Npb25faWQiOiIiLCJjbGllbnRfaWQiOiIiLCJkZXZpY2VfaWQiOiIiLCJtYXhfc2Vzc2lvbnMiOjAsInNlc3Npb25fZHVyYXRpb24iOjAsInVybCI6Imh0dHBzOi8vMjAxLjIzNS42Ni4xMjIiLCJhdWQiOiIxOTYiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.YJ-0zc7NXZmlQefxKTaBpelHoGJWgS0z_m-caaNBT0g-p4HQNkHMkK1hDKyplBo4fvA6p2nWAh5HjhfUnHvXBA==/live/c3eds/Eventos_PY/SA_Live_dash_enc_wl/Eventos_PY.mpd`;
 
             // Definir las claves
             var keyId, key;
@@ -1059,7 +1059,7 @@ else if (getURL == "RXZlbnRvc18yX0hE") // Eventos 2
         keyId = "e54e9ea87a634658fbba0e380aa701a7";
         key = "4e486d25d7d0e7d131743b285963c643";
 }	
-       // Convertir keyId y key a una cadena JSON
+ // Convertir keyId y key a una cadena JSON
                         if (keyId && key) {
                                 var keyString = `"${keyId}":"${key}"`;
                                 // Codificar en base64
@@ -1072,9 +1072,11 @@ else if (getURL == "RXZlbnRvc18yX0hE") // Eventos 2
                                 // Construir la URL con el key ofuscado en base64
                                 // console.log(`extensionUrl: ${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`);
                                 // var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYi5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi93ZWIuYXBwLmZsb3cuY29tLmFyLyJ9`;
-                                var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYmNsaWVudC5hbnRpbmFwbGF5cGx1cy5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly93ZWJjbGllbnQuYW50aW5hcGxheXBsdXMuY29tLmFyLyJ9`;
+                                // var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3dlYmNsaWVudC5hbnRpbmFwbGF5cGx1cy5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly93ZWJjbGllbnQuYW50aW5hcGxheXBsdXMuY29tLmFyLyJ9`;
+                                // var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}&headers=eyJvcmlnaW4iOiJodHRwczovL3BvcnRhbC5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi9wb3J0YWwuYXBwLmZsb3cuY29tLmFyLyJ9`;
+                                var extensionUrl = `chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#${mpdBase}?ck=${encodeURIComponent(base64Key)}`;
 
-                                console.log("Extension:" + extensionUrl);
+                                // console.log("Extension:" + extensionUrl);
                                 // Mostrar el reproductor o el mensaje de extensión según corresponda
                                 const playerDiv = document.getElementById("player");
                                 const alertaDiv = document.getElementById("alerta-extension");
