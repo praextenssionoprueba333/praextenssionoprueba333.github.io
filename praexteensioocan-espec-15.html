@@ -316,10 +316,6 @@
             text-decoration: underline;
         }
 
-        .jw-featured,
-        .jw-rightclick {
-            display: none !important;
-        }
     </style>
     
     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
@@ -931,7 +927,7 @@ Una vez instalada la extensión en tu Navegador,<br> recargar esta página.
 
             // Verificar si es la segunda carga (después del reload)
             const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('reloaded') === 'false') {
+            if (urlParams.get('reloaded') === 'true') {
                 console.log("Segunda carga detectada, cargando canal...");
                 loadChannelStream();
                 return;
@@ -942,7 +938,7 @@ Una vez instalada la extensión en tu Navegador,<br> recargar esta página.
                 () => {
                     console.log("Extensión detectada, iniciando servidor...");
                     // Marcar que vamos a recargar
-                    const newUrl = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=false';
+                    const newUrl = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
                     history.replaceState(null, '', newUrl);
                     addIframeToPlayer();
                 },
