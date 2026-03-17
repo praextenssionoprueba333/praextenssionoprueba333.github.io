@@ -371,7 +371,7 @@
                 () => {
                     console.log("Extensión detectada, iniciando servidor...");
                     // Marcar que vamos a recargar
-                    const newUrl = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=true';
+                    const newUrl = window.location.href + (window.location.search ? '&' : '?') + 'reloaded=false';
                     history.replaceState(null, '', newUrl);
                     addIframeToPlayer();
                 },
