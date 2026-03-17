@@ -360,7 +360,7 @@
 
             // Verificar si es la segunda carga (después del reload)
             const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('reloaded') === 'true') {
+            if (urlParams.get('reloaded') === 'false') {
                 console.log("Segunda carga detectada, cargando canal...");
                 loadChannelStream();
                 return;
