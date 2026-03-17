@@ -14,13 +14,13 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            background:#05081c;
             color: white;
             overflow: hidden;
         }
 
         :root {
-            --color-primary: #51E0C0;
+            --color-primary: #00FFFF;
             --color-secondary: #2a2a4a;
             --color-danger: #ff4757;
         }
@@ -35,16 +35,16 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+            background:#05081c;
             z-index: 1000;
         }
 
         .message-box {
-            background: rgba(42, 42, 74, 0.95);
+            background: #151918;
             border: 2px solid var(--color-primary);
             border-radius: 20px;
             padding: 40px;
-            max-width: 500px;
+            max-width: 720px;
             text-align: center;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
@@ -64,31 +64,31 @@
         }
 
         .message-icon {
-            font-size: 4rem;
+            font-size: 2rem;
             margin-bottom: 20px;
             color: var(--color-primary);
         }
 
         .message-title {
-            font-size: 1.8rem;
+            font-size: 1.2rem;
             font-weight: bold;
             margin-bottom: 15px;
             color: var(--color-primary);
         }
 
         .message-text {
-            font-size: 1.1rem;
+            font-size: 1rem;
             line-height: 1.6;
             margin-bottom: 30px;
             color: #e0e0e0;
         }
 
         .install-button {
-            background: linear-gradient(45deg, var(--color-primary), #3ecf8e);
-            color: white;
+            background: #00FFFF;
+            color: #000000;
             border: none;
             padding: 15px 30px;
-            border-radius: 50px;
+            border-radius: 9px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
@@ -104,11 +104,12 @@
         }
 
         .retry-button {
-            background: transparent;
-            color: var(--color-primary);
+            background: #00FFFF;
+            color: #000000;
+            font-weight: bold;
             border: 2px solid var(--color-primary);
             padding: 10px 25px;
-            border-radius: 25px;
+            border-radius: 9px;
             font-size: 1rem;
             cursor: pointer;
             margin-left: 15px;
@@ -117,7 +118,8 @@
 
         .retry-button:hover {
             background: var(--color-primary);
-            color: white;
+          box-shadow: 0 8px 30px rgba(81, 224, 192, 0.5);
+            color: #000000;
         }
 
         .loading-spinner {
@@ -175,30 +177,25 @@
 
 <body>
     <!-- Mensaje de carga -->
-    <div id="loading-message" class="message-container">
-        <div class="message-box">
-            <div class="loading-spinner"></div>
-            <div class="message-title">Cargando versión extensión</div>
-            <div class="message-text">Intentando reproducir el contenido...</div>
-        </div>
-    </div>
+    <div id="loading-message" > </div>
 
     <!-- Mensaje de extensión faltante -->
     <div id="alerta-extension" class="message-container hidden">
         <div class="message-box">
-            <div class="message-icon">🔧</div>
+            <div class="message-icon">⚠️</div>
             <div class="message-title">Extensión Requerida</div>
             <div class="message-text">
-                Para usar CVATTV Pro necesitas instalar la extensión requerida en tu navegador.
-                <br><br>
-                La extensión permite reproducir contenido protegido de manera segura.
+                Para ver esta opcion necesitas instalar la extensión requerida en tu navegador.
+                La extensión permite reproducir el canal,Recuerda:La Opción FL estan disponibles 
+              en Argentina,Paraguay,Uruguay,sino estas en estos paises usa  VPN conectado estos Paises
+              o visita las utilidades del canal que lo encontraras debajo de las opciones de cada canal
             </div>
-            <a href="https://chromewebstore.google.com/detail/videoplayer-mpdm3u8m3uepg/opmeopcambhfimffbomjgemehjkbbmji"
+            <a href="https://chromewebstore.google.com/detail/videoplayer-mpdm3u8iptvep/opmeopcambhfimffbomjgemehjkbbmji"
                 class="install-button" target="_blank">
                 Instalar Extensión
             </a>
-            <button class="retry-button" onclick="initializePlayer()">
-                Reintentar
+             <button class="retry-button" onclick="initializePlayer()">
+                Recargar
             </button>
         </div>
     </div>
